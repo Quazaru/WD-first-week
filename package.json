@@ -1,5 +1,5 @@
 {
-  "name": "try-to-webpack-2",
+  "name": "wd-first-week",
   "version": "1.0.0",
   "mode": "development",
   "description": "My second config on webpack where i try to write code myself",
@@ -36,5 +36,19 @@
     "normalize.css": "^8.0.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3"
   },
-  "browserslist": "> 0.25%, not dead"
+  "browserslist": "> 0.25%, not dead",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Quazaru/WD-first-week.git"
+  },
+  "keywords": [
+    "js",
+    "html",
+    "web",
+    "wd"
+  ],
+  "bugs": {
+    "url": "https://github.com/Quazaru/WD-first-week/issues"
+  },
+  "homepage": "https://github.com/Quazaru/WD-first-week#readme"
 }
