@@ -1,13 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css');
+
 body {
     font-family: 'Lato', sans-serif;
     height: 10000px;
+
     
 }
+.common-btn {
+    font-family: 'Raleway',serif;
+    font-weight: 400;
+    background: none;
+    border: none;
+    color: #fff;
+    background-color: #242424;
+    font-size: 20px;
+    padding: 17px 35px;
+}
+.common-btn:hover {
+    transition: 0.2s;
+    background-color: #ff0036;
+}
+
+.common-action {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    h3{
+        font-size: 30px;
+        font-family: 'Raleway';
+        font-weight: bold;
+        margin-bottom: 50px;
+        span{
+            color: #ff0036;
+        }
+    }
+    p{
+        font-size: 16px;
+        font-family: 'Lato';
+        font-weight: bold;
+        span {
+            color: #ff0036;
+        }
+    }
+}
+
+
+
 header {
     position: fixed;
+    z-index: 1000;
     width: 100%;
     background-color: #08080c;
     .container {
@@ -21,28 +64,33 @@ header {
     }
     
     .logo {
+        
         img{
             cursor: pointer;
             position: absolute;
             width: 75%;
+            
         }
 
     }
     nav {
-        
+        widows: 100%;
         ul {
-            display: flex;
             width: 100%;
-            font-style: 18px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
             padding: 0;margin: 0;
             list-style: none;
+            
 
             li{
                 cursor: pointer;
                 position: relative;
                 display: flex;
                 align-items: center;
-                width: 12%;
+                width: auto;
+                
                 p{
                     display: block;
                     text-align: center;
@@ -51,6 +99,7 @@ header {
                 }
             }
             li:hover::before, li:hover::after {
+                
                 content: '';
                 width: 30%;
                 height: 2px;
@@ -59,11 +108,13 @@ header {
                 bottom: 0;
                 left: 50%;
                 transform: translateX(-50%);
+               
             }
             li:hover::after{
                 top: 0;
             }
             li:hover {
+                transition: 0.2s;
                 color: #fff;
             }
         }
@@ -73,7 +124,190 @@ header {
 
         
 
+    }         
+}
+
+.slider {
+    position: relative;
+    background-image: url('../img/slider/bg.png');
+    width: 100%;
+    &__card{
+        padding-top: 180px;
+        padding-bottom: 210px;
+        
+        display: block;
+        
+        h2{ 
+            color: #fff;
+            span {
+                color: #ff1717;
+            };
+            display: block;
+            text-align: center;
+            font-family: 'Raleway', serif;
+            font-weight: bold;
+            font-size: 30px;
+            margin-bottom: 52px;
+        }
+        p{
+            color: #fff;
+            font-size: 16px;
+            display:block;
+            margin: 0 auto;
+            text-align: center;
+            width: 75%;
+            margin-bottom: 50px;
+            
+        }
+
+       
+    }
+    &__btn-block{
+        display: block;
+        text-align: center;
+        button:first-child{
+            margin-right: 30px;
+        }
+    }
+    &__arrow{
+        border: none;
+        width: 17px;
+        height: 28px;
+        background: url('../img/slider/arrow.png');
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &__arrow_right{
+        right: 30px;
+        background: url('../img/slider/right-arrow.png');
+    }
+    &__arrow_left{
+        left: 30px;
+    }
+    &__arrow_right:hover{
+        
+        background: url('../img/slider/arrow-active.png');
+    }
+    &__arrow_left:hover{
+        background: url('../img/slider/left-arrow-active.png');
     }
 
+
+}
+.about {
+
+
+    &__description {
+        
+        display: flex;
+        justify-content: space-around;
+        p {
+            font-family: 'Lato';
+            color: #505050;
+            margin-bottom: 45px;
+        }
+    }
+    &__accordion {
+        margin-bottom: 10px;
+        p{
+            display: none;
+            margin: 0;
+            padding: 5px;
+            border: 1px solid #dbdbdb ;
+            border-top: none;
+            background-color: #f7f7f7;
+        }
+    }
+    &__accordion-active {
+        p {
+            display: block;
+        }
+        .about__button {
+            button {
+                h3 {
+                    color: #ff0036;
+                }
+            }
+        }
+    }
+
+
+    .about__button {
+       
+        background: none;
+        margin: 0;
+
+
+        button {
+            background-color: #f7f7f7;
+            border: 1px solid #e4e4e4;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+
+            h3{ 
+                margin: 0;
+                margin-left: 30px;
+                font-size: 20px;
+                font-family: 'Raleway';
                 
+            }
+
+
+        }
+
+    }
+    &__svg{
+        background: url('../img/about/acc-plus.svg') no-repeat center;
+        width: 23px;
+        height: 38px;
+        border-right: 1px solid #e4e4e4;
+        padding: 15px 20px;                
+    }
+}
+@media screen and (max-width: 990px){
+    header {
+        .logo {
+            
+            display: none;
+        }
+        nav {
+            ul{
+                font-size: 14px;
+            }
+            
+        }
+    }
+}
+@media screen and (max-width: 550px){
+    header {
+        position: relative;
+        height: 100px;
+        border-bottom: 2px solid #ff0036;
+        nav {
+                       
+            ul {
+                
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3,4fr);
+                grid-template-rows: repeat(3, 50%);
+            }                 
+        }         
+    };
+    .slider {
+        &__arrow{
+            display: none;
+        }
+        &__btn-block{
+            button:first-child{
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    }
 }
