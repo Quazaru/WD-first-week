@@ -45,7 +45,25 @@ body {
         }
     }
 }
-
+.deco-stroke {
+    display: block;
+    text-align: center;
+    position: relative;
+}
+.deco-stroke::before{
+   position: absolute;
+   z-index: -10;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.637);
+      
+}
 
 
 header {
@@ -196,10 +214,14 @@ header {
 
 }
 .about {
-
+    &__img{
+        img{
+            width: 100%;
+        }
+    }
 
     &__description {
-        
+        padding-bottom: 110px;
         display: flex;
         justify-content: space-around;
         p {
@@ -208,21 +230,30 @@ header {
             margin-bottom: 45px;
         }
     }
+    &__description::after{
+        content: '';
+    }
     &__accordion {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         p{
-            display: none;
             margin: 0;
             padding: 5px;
             border: 1px solid #dbdbdb ;
             border-top: none;
             background-color: #f7f7f7;
+            display: block;
+            height: 0;
+            overflow: hidden;
+            opacity: 0;
+
         }
     }
     &__accordion-active {
-        p {
-            display: block;
+       
+        .about__svg {
+            background: url('../img/about/acc-min.svg') no-repeat center;
         }
+
         .about__button {
             button {
                 h3 {
@@ -266,10 +297,115 @@ header {
         width: 23px;
         height: 38px;
         border-right: 1px solid #e4e4e4;
-        padding: 15px 20px;                
+        padding: 15px 20px;
+                       
+    }
+    &__features{
+        margin-top: 100px;
+        margin-bottom: 100px;
+        .about__dignity{
+            text-align: center;
+            svg{
+                
+                margin-bottom: 35px;
+            }
+            h3{
+                font-family: 'Raleway';
+                color: #262626 ;
+                font-size: 20px;
+                margin-bottom: 18px;
+            }
+            p{
+                font-size: 16px;
+                color: #505050;
+            }
+                
+
+        }
     }
 }
+.portfolio {
+    position: relative;
+    
+    .deco-stroke{
+        transform: translateY(40%);
+    }
+    .deco-stroke::before{
+        position: absolute;
+        z-index: 10;
+         top: 55%;
+         left: 50%;
+         transform: translateX(-50%);
+         content: '';
+         display: block;
+         margin: 0 auto;
+         width: 50%;
+         height: 1px;
+         background-color: #ff0036 !important;
+           
+     }
+    padding-top: 100px;
+    background-color: #262626;
+    text-align: center;
+    h2{
+        
+        margin-bottom: 30px;
+        font-family: 'Raleway';
+        color: #fff;
+    }
+    ul {
+        padding: 0;
+        width: 40%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        
+        li{
+            display: inline-block;
+            color: #a4a4a4;
+        }
+        li:hover{
+            cursor: pointer;
+            transition: 0.20s;
+            color: #ff0036;
+        }
+        margin-bottom: 100px;
+    }
+    &__big-img{
+        width: 30%;
+    }
+    &__small-img{
+        width: 20%;
+    }
+    &__grid{
+        margin-bottom: 110px;
+    }
+    &__row{
+
+        display: flex;
+        
+    }
+}
+.features {
+    &__img{
+        img{
+            width: 100%;
+        }
+    }     
+    .features__left-aside, .features__right-aside{
+        ul{
+            padding: 0;
+            list-style: none;
+         }
+}
+            
+}
+
 @media screen and (max-width: 990px){
+    .about__img{
+        display: none;
+    }
     header {
         .logo {
             
@@ -280,6 +416,15 @@ header {
                 font-size: 14px;
             }
             
+        }
+    }
+    .portfolio {
+        ul{
+
+            display: block;
+            li{
+                display: block;
+            }
         }
     }
 }
@@ -302,6 +447,7 @@ header {
     .slider {
         &__arrow{
             display: none;
+            
         }
         &__btn-block{
             button:first-child{

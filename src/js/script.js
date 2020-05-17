@@ -1,24 +1,64 @@
+/////////////////////////////////////////////////////////////////////
+//                          Imports
+/////////////////////////////////////////////////////////////////////
+
+
 import '../css/styles.scss';
 import 'normalize.css';
+import anime from 'animejs/lib/anime.es.js';
+
+
+/////////////////////////////////////////////////////////////////////
+//                          Variables 
+///////////////////////////////////////////////////////////////////
 const aboutAccordion = document.querySelectorAll('.about__button');
 
 
 
-
-const accordionToggle = () => {
-    ;
-}
-
+/////////////////////////////////////////////////////////////////////
+//                          Functions
+/////////////////////////////////////////////////////////////////////
 
 
 
 
-
+/////////////////////////////////////////////////////////////////////
+//                          Listeners
+/////////////////////////////////////////////////////////////////////
 aboutAccordion.forEach( (item, i) => {
     aboutAccordion[i].addEventListener('click', (event) => {
         const target = event.target;
         const accordion = target.closest('.about__accordion');
         accordion.classList.toggle("about__accordion-active")
+        if(accordion.classList.contains('about__accordion-active')){
+            anime( {
+                targets: accordion.querySelector('.about__p'),
+                duration: 400,
+                height: '100px',
+                opacity: 1,
+
+            } )
+        }else{
+            anime( {
+                targets: accordion.querySelector('.about__p'),
+                duration: 900,
+                height: '0px',
+                opacity: 0,
+
+                
+            } )
+
+        }
     });
     console.log(item, i , aboutAccordion);
 })
+
+/////////////////////////////////////////////////////////////////////
+//                      Animation(AnimeJS)
+/////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////
+//                      Executing
+/////////////////////////////////////////////////////////////////////
