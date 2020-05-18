@@ -389,19 +389,91 @@ header {
 }
 .features {
     &__img{
+        margin-bottom: 100px;
+        position: relative;
         img{
             width: 100%;
         }
+        button{
+            padding: 10px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 30px
+        }
     }     
     .features__left-aside, .features__right-aside{
+        margin-top: 50px;
         ul{
             padding: 0;
             list-style: none;
+            li{
+                font-family: 'Raleway';
+                font-weight: 500;
+                width: 115%;
+                height: 50px;
+                margin-bottom: 23px;
+                border: 1px solid rgba(0, 0, 0, 0.096);
+                line-height: 50px;
+                font-size: 20px;
+                
+            }
+            li:hover {
+                color: #fff;
+                background-color: #ff0036;
+                transition: 0.3s;
+            }
          }
-}
+        }
+    &__left-aside {
+        ul {
+            text-align: right;
+            p::after{
+                margin-right: 10px;
+                margin-left: 10px;
+                transform: translateY(7.5px);
+                content: '';
+                display: inline-block;
+                height: 35px;
+                width: 35px;
+                background: url('../img/features/done-png.png') center no-repeat;
+            }
+            p:hover:after{
+
+                transition: 0.3s;
+                background: url('../img/features/done-active.png') center no-repeat !important;
+            }
+        }
+    }
+    &__right-aside {
+        transform: translateX(-15%);
+        ul {
+            
+            p::before{
+                margin-right: 10px;
+                margin-left: 10px;
+                transform: translateY(7.5px);
+                content: '';
+                display: inline-block;
+                height: 35px;
+                width: 35px;
+                background: url('../img/features/done-png.png') center no-repeat;
+            }
+            p:hover:before{
+                transition: 0.3s;
+                background: url('../img/features/done-active.png') center no-repeat !important;
+            }
+        }
+    }
+
             
 }
 
+
+
+
+
+// ADAPTIVE
 @media screen and (max-width: 990px){
     .about__img{
         display: none;
