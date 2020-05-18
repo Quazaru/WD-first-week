@@ -499,6 +499,29 @@ header {
             }
         }
     }
+    .features{
+        margin: 0 auto;
+        .features__left-aside, .features__right-aside{
+            ul {
+                width: 90%;
+                li{
+                    width: 120%;
+                    font-size: 18px;
+                }
+            }
+        }
+        .features__right-aside{
+            transform: translateX(0);
+        }
+        &__img{
+
+            img {
+                display: block;
+                margin: 0 auto;
+                width: 320px;
+            }
+        }
+    }
 }
 @media screen and (max-width: 550px){
     header {
