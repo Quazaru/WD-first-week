@@ -32,11 +32,13 @@ body {
         font-family: 'Raleway';
         font-weight: bold;
         margin-bottom: 50px;
+        color: #fff;
         span{
             color: #ff0036;
         }
     }
     p{
+        color: #a4a4a4;
         font-size: 16px;
         font-family: 'Lato';
         font-weight: bold;
@@ -64,6 +66,23 @@ body {
     background-color: rgba(0, 0, 0, 0.637);
       
 }
+.deco-stroke_red{
+        transform: translateY(40%);
+}
+.deco-stroke_red::before{
+    position: absolute;
+    z-index: 10;
+     top: 55%;
+     left: 50%;
+     transform: translateX(-50%);
+     content: '';
+     display: block;
+     margin: 0 auto;
+     width: 50%;
+     height: 1px;
+     background-color: #ff0036 !important;
+       
+ }
 
 
 header {
@@ -327,23 +346,8 @@ header {
 .portfolio {
     position: relative;
     
-    .deco-stroke{
-        transform: translateY(40%);
-    }
-    .deco-stroke::before{
-        position: absolute;
-        z-index: 10;
-         top: 55%;
-         left: 50%;
-         transform: translateX(-50%);
-         content: '';
-         display: block;
-         margin: 0 auto;
-         width: 50%;
-         height: 1px;
-         background-color: #ff0036 !important;
-           
-     }
+
+
     padding-top: 100px;
     background-color: #262626;
     text-align: center;
@@ -468,7 +472,170 @@ header {
 
             
 }
+.clients {
+    
+    background: url('../img/clients/bg.png');
 
+    .common-action {
+        margin-top: 0;
+        padding-top: 100px;
+        h3{
+            color: #fff;
+        }
+        p{
+            color: #a4a4a4;
+        }
+    }
+    &__main {
+        color: #a4a4a4;
+        display: flex;
+
+    }
+    &__slider{
+        text-align: center;
+        h3{
+            color: #fff;
+            margin-bottom: 50px;
+        }
+    }
+    &__worker {
+        margin-top: 50px;
+        h3{
+            margin-top: 16px;
+            color: #ff0036;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+    &__sponsors{
+        
+        padding-bottom: 40px;
+        display: grid;
+        grid-template-columns: 45% 45%;
+        grid-gap: 30px;
+        .clients__visit-card{
+            .clients__card-wrap{
+                width: 200px;
+            }
+            text-align-last: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(60% 60%,#fff , rgb(146, 146, 146));
+            position: relative;
+            img, h3{
+                color: #000;
+                display: inline-block;
+                
+            }
+            img{
+                width: 20%;
+            }
+            h3{
+                width: 75%;
+            }
+
+        }
+    }
+}
+.team {
+    .common-action {
+        h3{
+            color: #000;
+        }
+    }
+    &__workers {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__worker{
+        margin: 0 auto;
+        width: 272px;
+        margin-bottom: 100px;
+        text-align: center;
+        border: 1px solid rgb(223, 223, 223);
+        h3{
+            font-family: 'Raleway';
+            font-size: 20px;
+            color: #262626;
+            margin-top: 35px;
+            margin-bottom: 25px;
+        }
+        p{
+            font-size: 16px;
+            color: #505050;
+            margin-bottom: 35px;
+            
+
+        }
+        img{
+            width: 270px;
+            height: 240px;
+        }
+    }
+    &__loaders{
+        margin-bottom: 100px;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    &__load-bar{
+        
+        position: relative;
+        color: #ff0036 !important;
+        display: block;
+        margin: 0 auto;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        background-color: #fff;
+        padding: 40px 30px;
+        font-size: 40px !important;
+        text-align: center;
+
+
+    }
+    &__load-bar::before{
+        
+        content: ''; 
+        display: block;
+        position: absolute;
+        z-index: -100;        
+        width: 145px;
+        height: 145px;
+        left: -2px;
+        top: -2px;
+        
+        border-radius: 50%;
+        background: linear-gradient(to right,#ff0036 90%, #e0e0e0 10%);
+    }
+    &__load-bar_70::before{background: linear-gradient(to right,#ff0036 70%, #e0e0e0 5%);}
+    &__load-bar_80::before{background: linear-gradient(to right,#ff0036 80%, #e0e0e0 30%);}
+    &__loader{
+        
+        width: 270px;
+
+        h3{
+            
+            margin-top: 25px;
+            font-family: 'Raleway';
+            font-size: 20px;
+            color: #262626;
+
+        }
+        p{
+            font-size: 16px;
+            color: #505050;
+            margin-bottom: 35px;
+            margin-top: 25px;
+
+        }
+    }
+}
+.services {
+    background-color: #272727;
+}
 
 
 
@@ -522,6 +689,27 @@ header {
             }
         }
     }
+    .clients{
+        &__sponsors{
+            grid-template-columns:49% 49%;
+            grid-template-rows: 100px 100px;
+            grid-gap: 5px;
+            padding-bottom: 0;
+        }
+    }
+    .team{
+        &__loaders {
+            
+            display: block;
+        }
+        &__loader{
+            width: 40%;
+            display: inline-block;
+            margin-right: 20px;
+           
+           
+        }
+   }
 }
 @media screen and (max-width: 550px){
     header {
@@ -550,5 +738,23 @@ header {
                 margin-bottom: 10px;
             }
         }
+    }
+    .clients{
+         &__sponsors{
+             display: block;
+             .clients__visit-card{
+                 margin-bottom: 10px;
+             }
+         }
+    }
+    .team{
+         &__loaders {
+             
+             display: block;
+         }
+         &__loader{
+            margin: 0 auto;
+            
+         }
     }
 }
