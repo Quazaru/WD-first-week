@@ -413,6 +413,7 @@ header {
             content: '';
             
             display: block;
+            opacity: 0.93;
             width: 100%;
             height: calc(100% + 1px);
             cursor: pointer;
@@ -420,7 +421,8 @@ header {
             z-index: 100;
             left: 0;
             top: -1px;                     
-            background: url(../img/portfolio/grid/hover.png)  center;
+            background: url(../img/portfolio/grid/hover.png)  center no-repeat;
+            background-color: #000;
         }
         display: flex;
         justify-content: center;
